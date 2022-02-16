@@ -1,6 +1,9 @@
 <?php 
 
-// Déclarations des personnages
+include_once 'includes/header.php';
+
+include_once 'utils.php'; // Include de mes fonctions
+
 
 $alfred = [
     'name' => 'Alfred',
@@ -38,20 +41,8 @@ $selena = [
 ];
 
 
-var_dump($alfred['pv']);
-
-//$alfred['pv'] -= (int) ($alfred['pv'] / 3);
-
-var_dump($alfred['pv']);//die('Arret'); // Le die sert à stoppé tout le code aprés lui
-
-var_dump($alfred['pv'] <= 200);
-var_dump($alfred['pv'] === 200);
-var_dump($alfred['name'] === 'Mjolnir');
-var_dump(!$alfred['pv']);
-
-
 // Switch case pour la professions
-
+/*
 switch ($james['profession']) {
     case 'Chomeur':
         echo '<br/> Va chercher du taff <br/>';
@@ -63,7 +54,7 @@ switch ($james['profession']) {
         echo '<br/> Je sais pas ce que tu fous <br/>';
 }
 
-/*
+// Boucle while
 echo  'Combat tant attendu entre le Major d\'homme et l\'inspecteur <br/>';
 while ($james['pv'] > 0 && $alfred['pv'] > 0) {
     $james['pv'] -= $alfred['atk'];
@@ -73,38 +64,27 @@ while ($james['pv'] > 0 && $alfred['pv'] > 0) {
 }
 */
 
-// Status pv alfred
 
-if ($alfred['pv'] > 50) {
-    echo ' <br />Tu peux y aller Alfred ! <br/>';
-} elseif ($alfred['pv'] <= 50 && $alfred['pv'] > 0) {
-    echo ' <br /> Ménage toi ! <br/>';
-} else {
-    echo '<br /> Je vous l\'avais bien dit </br>';
-}
-/**
- * @param array $attacker
- * @param array $victime
- * @return int
- */
-function getCombat(array $attacker, array &$victime) :int {
 
-    return $victime['pv'] -= $attacker['atk'];
-}
 
-/**
- * @param array $personnage
- * @return void
- */
-function getHealth(array $personnage) :void {
-    if ($personnage['pv'] > 50) {
-        echo ' <br />Tu peux y aller Alfred ! <br/>';
-    } elseif ($personnage['pv'] <= 50 && $alfred['pv'] > 0) {
-        echo ' <br /> Ménage toi ! <br/>';
-    } else {
-        echo '<br /> Je vous l\'avais bien dit </br>';
-    }
-}
+getCombat($selena, $bruce);
 
-getHealth(getCombat($james, $alfred));
+
+
+echo strtoupper($alfred['name']); // En majuscule
+
+
+$presentation = 'Je suis Arthur Pendragon !';
+echo strpos($presentation, 'Arthur'); // 8eme position
+
+
+$personnages = ['Arthur', 'Lancelot', 'Perceval', 'Guenièvre', 'Merlin', 'Mordred'];
+echo array_reduce($personnages, static function($carry, $name) { // Reduce pareille que en JS
+    return strlen($carry) > strlen($name) ? $carry : $name;
+}, ' '); // Parametre initial de carry
+
+
+
+include_once 'includes/footer.php';
+
 

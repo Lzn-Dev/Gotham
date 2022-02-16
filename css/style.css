@@ -1,0 +1,35 @@
+/* PARTIE HEADER */
+body {
+    background : black;
+    color: #7a7a7a;
+    font-family: monospace;
+}
+
+h1 {
+    font-family: ".SF NS Mono", monospace;
+    color: black;
+}
+header {
+    background-color: #f8d82f;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+}
+
+header .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+h1 {
+    color: black;
+}
+
+.container {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 3.4rem;
+    padding-right: 3.4rem;
+    max-width: calc(110rem + (3.4rem*2));
+}
