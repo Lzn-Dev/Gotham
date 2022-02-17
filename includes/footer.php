@@ -1,7 +1,13 @@
 
 
 
+<!-- FOOTER + FERMETURE DES BALISES BODY / HTML -->
 
-</div>
+
+<footer>
+    <p>Gotham Project</p>
+</footer>
+
 </body>
 </html>
+

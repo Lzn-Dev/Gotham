@@ -1,90 +1,27 @@
-<?php 
+<?php
 
-include_once 'includes/header.php';
+require_once 'utils/tableConnect.php'; // Connection à la BDD
 
-include_once 'utils.php'; // Include de mes fonctions
-
-
-$alfred = [
-    'name' => 'Alfred',
-    'profession' => 'Major d\'homme',
-    'pv' => 100,
-    'atk' => 10,
-];
-
-$james = [
-    'name' => 'James',
-    'profession' => 'Inspecteur',
-    'pv' => 175,
-    'atk' => 40,
-];
-
-$pingouin = [
-    'name' => 'Osvald',
-    'profession' => 'Parain',
-    'pv' => 80,
-    'atk' => 60,
-];
-
-$bruce = [
-    'name' => 'Bruce',
-    'profession' => 'Milliardaire',
-    'pv' => 120,
-    'atk' => 35,
-];
-
-$selena = [
-    'name' => 'Selena',
-    'profession' => 'Voleuse',
-    'pv' => 80,
-    'atk' => 30,
-];
+include_once 'includes/header.php'; // Ajout du header
+include_once 'utils/function.php'; // Ajout de mes fonctions
 
 
-// Switch case pour la professions
-/*
-switch ($james['profession']) {
-    case 'Chomeur':
-        echo '<br/> Va chercher du taff <br/>';
-        break;
-    case 'Inspecteur':
-        echo '<br/> Va tuer le pingouin <br/>';
-        break;
-    default:
-        echo '<br/> Je sais pas ce que tu fous <br/>';
-}
+sessionMessage($_SESSION['create']);
+sessionMessage($_SESSION['delete']);
 
-// Boucle while
-echo  'Combat tant attendu entre le Major d\'homme et l\'inspecteur <br/>';
-while ($james['pv'] > 0 && $alfred['pv'] > 0) {
-    $james['pv'] -= $alfred['atk'];
-    echo 'Pv de James ' . $james['pv'] . '<br/>';
-    $alfred['pv'] -= $james['atk'];
-    echo 'Pv de Alfred' . $alfred['pv'] . '<br/>';
-}
-*/
+include_once 'includes/form.php'; // Inclusion du formulaire
 
 
+$personnageArray = connectAll($dbconnect); // Connexion à la base
+// Utilsiation de $personnageArray dans ~/personnagesSection
+
+// Inclusion des personnages créer
+include_once 'includes/personnagesSection.php';
+$_SESSION['create'] = ''; // Remise à Zero de l'info de session 'create'
+$_SESSION['delete'] = ''; // Remise à Zero de l'info de session 'delete'
 
 
-getCombat($selena, $bruce);
+include_once 'includes/footer.php'; // Inclusion du footer
 
-
-
-echo strtoupper($alfred['name']); // En majuscule
-
-
-$presentation = 'Je suis Arthur Pendragon !';
-echo strpos($presentation, 'Arthur'); // 8eme position
-
-
-$personnages = ['Arthur', 'Lancelot', 'Perceval', 'Guenièvre', 'Merlin', 'Mordred'];
-echo array_reduce($personnages, static function($carry, $name) { // Reduce pareille que en JS
-    return strlen($carry) > strlen($name) ? $carry : $name;
-}, ' '); // Parametre initial de carry
-
-
-
-include_once 'includes/footer.php';
 
 

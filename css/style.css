@@ -1,35 +1,129 @@
 /* PARTIE HEADER */
+html {
+    height: 100%;
+}
 body {
+    min-height: 100%;
     background : black;
     color: #7a7a7a;
     font-family: monospace;
 }
 
 h1 {
+    text-align: center;
     font-family: ".SF NS Mono", monospace;
     color: black;
 }
+
+h2 {
+    text-align: center;
+    color: #d2ca2f;
+    margin-bottom: 4rem;
+}
+
+/* HEADER */
 header {
     background-color: #f8d82f;
     padding-top: 3rem;
     padding-bottom: 3rem;
+    margin-bottom: 5rem;
 }
 
-header .container {
+
+
+
+/* CONTAINER */
+.container {
     display: flex;
-    align-items: center;
     justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 10rem;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 5rem;
+    padding-right: 5rem;
+    max-width: calc(110rem + (3.4rem*2));
 }
 
-h1 {
+/* FORM.php */
+form {
+    display: flex;
+    flex-direction: column;
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+    gap: 1rem;
+}
+
+.input-section{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    gap: 3rem;
+}
+.label-style {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+}
+.input-style {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.input-style input {
+    width: 25rem;
+    height: 2.5rem;
+}
+
+#submit {
+    margin-top: 2rem;
+    align-self: center;
+    max-width: 10rem;
+}
+
+/* Personnage.php */
+.personnage-card {
+    display: inline-block;
+    max-width: 350px;
+    border: 1px solid gray;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+/* Presentation table.php */
+.tableau {
+
+}
+
+th {
+    text-align: start;
+}
+
+table {
+    border: 1px solid gray;
+    padding: 2rem;
+}
+
+/* Footer */
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 5rem;
+    background-color: gray;
+    bottom: 0;
+}
+
+footer p {
     color: black;
 }
 
-.container {
-    width: 100%;
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: 3.4rem;
-    padding-right: 3.4rem;
-    max-width: calc(110rem + (3.4rem*2));
+img {
+    background-color: aliceblue;
+    width: 2rem;
+    height: 1.5rem;
 }

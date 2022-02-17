@@ -34,3 +34,9 @@ function getHealth(array $personnage) :void {
 function formatName(string $name):string {
     return ucfirst(strtolower($name)); // Met la premiere lettre en MAJ > Met le reste en MIN
 }
+
+function sessionMessage($session):void {
+    if (isset($session) && ($session === 'succes' || $session === 'error')) {
+        echo "<script type='text/javascript'> alert('". $session."') </script>";
+    }
+}

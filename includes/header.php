@@ -1,3 +1,9 @@
+
+
+
+
+<!-- DOCTYPE + OUVRIR HTML + HEAD + BODY + HEADER  -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,15 +13,16 @@
     <link rel="stylesheet" href="../css/reset.css">
     <link rel="stylesheet" href="../css/helpers.css">
     <link rel="stylesheet" href="../css/style.css">
+    <link href="../image/favicon.ico" rel="icon" type="image/x-icon" />
     <title>Gotham</title>
 </head>
 <body>
 
 <header>
-    <div class="container">
+    <div class="container-header">
         <h1>Exercices PHP</h1>
     </div>
 </header>
 
-<div class="container">
+
 
